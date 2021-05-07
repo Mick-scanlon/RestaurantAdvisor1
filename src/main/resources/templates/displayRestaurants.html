@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Display Restaurants</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+</head>
+<body>    
+<div class="content">
+<div class="header">
+  <h1>Mick's Restaurant Advisor</h1>
+  <p>Restaurants</p>
+</div> 
+
+ <div class="topnav">
+  <a href="/Home.html">Home</a>
+  <a href="orderRestaurants">Orders</a>
+  <a class="active">Restaurants</a>
+  <a href="/Reviews.html">Reviews</a>
+  <a href="/RestaurantLogin.html">Logout</a>
+</div> 
+<h1>Restaurant List</h1>
+    <table class="prettytable">
+      <tr>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>PHONE</th>
+      </tr>
+      
+      <tr th:each="restaurant : ${restList}">
+        <td> <a href="/restaurants.html" th:text="${restaurant.name}"></a> </td>
+        <td th:text="${restaurant.email}"></td>
+        <td th:text="${restaurant.phone}"></td>
+      </tr>
+    </table>
+  
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <p class="w3-medium">
+    Created by Mick Scanlon for COSC 4800
+  </p>
+</footer>
+</div> 
+</body>
+</html>

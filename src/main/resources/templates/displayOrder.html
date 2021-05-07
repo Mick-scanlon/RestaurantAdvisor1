@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Your Order</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>    
+<div class="content">
+<div class="header">
+  <h1>Mick's Restaurant Advisor</h1>
+  <p>Results</p>
+</div> 
+
+ <div class="topnav">
+  <a href="/home.html" >Home</a>
+  <a class="active">Order</a>
+  <a href="displayRestaurants">Restaurants</a>
+  <a href="/Reviews.html">Reviews</a>
+  <a href="/RestaurantLogin.html">Logout</a>
+</div> 
+
+<h2><span th:text=${order} /> <br/></h2>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Display Restaurants</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+</head>
+<body>    
+<div class="content">
+<div class="header">
+  <h1>Mick's Restaurant Advisor</h1>
+  <p>Restaurants</p>
+</div> 
+
+ <div class="topnav">
+  <a href="/Home.html">Home</a>
+  <a href="orderRestaurants">Orders</a>
+  <a href="displayRestaurants">Restaurants</a>
+  <a class="active" >Reviews</a>
+  <a href="/RestaurantLogin.html">Logout</a>
+</div> 
+<h1>Review List</h1>
+    <table class="prettytable">
+      <tr>
+        <th>RESTID</th>
+        <th>USER</th>
+        <th>DESCRIPTION</th>
+        <th>RATING</th>
+      </tr>
+      
+      <tr th:each="review : ${reviewList}">
+        <td th:text="${review.restID}"></td>
+        <td th:text="${review.custEmail}"></td>
+        <td th:text="${review.reviewDescr}"></td>
+        <td th:text="${review.rating}"></td>
+      </tr>
+    </table>
+<h1>Restaurant List</h1>
+    <table class="prettytable">
+      <tr>
+        <th>NAME</th>
+        <th>RESTID</th>
+      </tr>
+      
+      <tr th:each="restaurant : ${restList}">
+        <td th:text="${restaurant.name}"> </td>
+        <td th:text="${restaurant.restID}"></td>
+      </tr>
+    </table>
+</div>
+</body>
+</html>

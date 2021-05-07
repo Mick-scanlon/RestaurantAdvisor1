@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Menu</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>    
+<div class="content">
+<div class="header">
+  <h1>Mick's Restaurant Advisor</h1>
+  <p>Menu</p>
+</div> 
+
+ <div class="topnav">
+  <a href="/home.html" >Home</a>
+  <a class="active">Order</a>
+  <a href="displayRestaurants">Restaurants</a>
+  <a href="/Reviews.html">Reviews</a>
+  <a href="/RestaurantLogin.html">Logout</a>
+</div> 
+
+<h1>Restaurant List</h1>
+1- Pick-up 2- Dine-In 3-Delivery
+  <form action="createOrder" method="post">
+    <table class="prettytable">
+      <tr>
+        <th>ITEM</th>
+        <th>PRICE</th>
+        <th>ADD TO ORDER</th>
+      </tr>
+      
+      <tr th:each="foodItem, iteration : ${menu}">
+        <td th:text="${foodItem.foodName}"></td>
+        <td th:text="${foodItem.foodPrice}"></td>
+        <td><input type="text" id="quantity" th:attr="value[iteration] = ${quantity}" pattern="[0-9]{1,}" placeholder="max 9 per item"/></td>
+      </tr>
+      <tr>
+      <td><input type="text" name="orderTypeFlag" pattern="[1-3]{1}" placeholder="1, 2, 3"/></td>
+      </tr>
+      <tr>
+      <td><input type="email" name="custEmail" placeholder="Please re-enter your email"/></td>
+      </tr>
+    </table>
+
+	<input type="submit" value="Continue" /> 
+</form>
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <a href="/orderRestaurants">Return to Restaurant List</a>
+  <p class="w3-medium">
+    Created by Mick Scanlon for COSC 4800
+  </p>
+</footer>
+</div>
+</body>
+</html>

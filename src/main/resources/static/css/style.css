@@ -1,0 +1,91 @@
+@charset "ISO-8859-1";
+
+.content {
+  margin: auto;
+}
+.header {
+  padding: 10px;
+  text-align: center;
+  background: grey;
+  color: black;
+  font-size: 30px;
+}
+.header2{
+ text-align: center;
+ max-width: 800px;
+ margin: auto;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: black;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: grey;
+  color: white;
+}
+.vertical-menu {
+  width: 200px; /* Set a width if you like */
+  margin: auto;
+}
+
+.vertical-menu a {
+  background-color: white; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: black; /* Dark grey background on mouse-over */
+  color: white;
+}
+
+.vertical-menu a.active {
+  background-color: grey; /* Add a green color to the "active/current" link */
+  color: white;
+}
+table.prettytable {
+  margin: 1em 1em 1em 2em;
+  background: whitesmoke;
+  border-collapse: collapse;
+}
+table.prettytable th, table.prettytable td {
+  border: 1px silver solid;
+  padding: 0.2em;
+}
+table.prettytable th {
+  background: gainsboro;
+  text-align: left;
+}
+table.prettytable caption {
+  margin-left: inherit;
+  margin-right: inherit;
+} 
+p, ul, dd, dt, dl {
+  padding-left:10px;	
+  padding-right:10px;
+}
+li {
+	margin-left:20px;
+	padding-left:5px;
+}

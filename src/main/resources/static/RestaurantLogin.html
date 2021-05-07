@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Mick's Login</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<script>
+    history.pushState(null, null, null);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, null);
+    });
+</script>
+<body>
+<p> Welcome to Mick's Restaurant Advisor</p>
+<a href="/registerForm">Not a user? Register here!</a>
+
+<form action="/checkLogin" method = "post">
+
+<table class="prettytable">
+<tr> 
+<td> Please enter your email : </td>
+<td> <input type="text" placeholder="Enter Email" id="username" name="username" > </td>
+</tr>
+
+<tr> 
+<td> Please enter your password : </td>
+<td> <input type="password" placeholder="Enter Password" id="password" name="password" value=""> </td>
+</tr>
+
+<tr> 
+<td><input type="submit" value="Submit" /> </td>
+</tr>
+
+
+</table>
+
+</form>
+
+</body>
+</html>

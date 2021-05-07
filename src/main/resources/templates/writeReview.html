@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Display Restaurants</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+</head>
+<body>    
+<div class="content">
+<div class="header">
+  <h1>Mick's Restaurant Advisor</h1>
+  <p>Restaurants</p>
+</div> 
+
+ <div class="topnav">
+  <a href="/Home.html">Home</a>
+  <a href="orderRestaurants">Orders</a>
+  <a class="active">Restaurants</a>
+  <a href="/Reviews.html">Reviews</a>
+  <a href="/RestaurantLogin.html">Logout</a>
+</div> 
+<h1>Restaurant List</h1>
+    <table class="prettytable">
+      <tr>
+        <th>NAME</th>
+        <th>RESTID</th>
+      </tr>
+      
+      <tr th:each="restaurant : ${restList}">
+        <td th:text="${restaurant.name}"> </td>
+        <td th:text="${restaurant.restID}"></td>
+      </tr>
+    </table>
+<form action="#" th:action="@{/submitReview}" th:object="${newReview}" method="post">
+<p>Your Email: <input type="email" th:field="*{custEmail}" required/></p>
+<p>RESTID: <input type="text" th:field="*{restID}" pattern="[0-9]{4}" required placeholder="4-digits found above"/></p>
+<p>Description: <input type="text" th:field="*{reviewDescr}" required/></p>
+<p>Rating 1-5: <input type="text" th:field="*{rating}" pattern="[1-5]{1}"required/></p>
+<p><input type="submit" value="Submit" /></p>
+</form>
+</div>
+</body>
+</html>
